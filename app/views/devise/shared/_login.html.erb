@@ -1,0 +1,23 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Digite seu email' %>
+    <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar seus dados com ninguém.</small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, 'Senha' %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-check">
+      <%= f.check_box :remember_me, class: 'form-check-input' %>
+      <%= f.label :remember_me, 'Lembrar de mim' %>
+    </div>
+  <% end %>
+
+  <div class="btn-group d-flex">
+    <%= f.submit "Entrar", class: 'btn btn-success' %>
+  </div>
+<% end %>

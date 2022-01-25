@@ -1,14 +1,31 @@
 <div class="card mx-auto" style="width: 40%; min-width: 200px; margin-top: 10%">
   <div class="card-header">
-    <i class="bi-box-arrow-in-right"></i> Login
+    <% if user_signed_in? %>
+      <i class="bi-card-text"></i> Home
+    <% else %>
+      <i class="bi-box-arrow-in-right"></i> Login
+    <% end %>
   </div>
+
   <div class="card-body">
     <h5 class="card-title">Bem Vindo!</h5>
-    <p class="card-text">Seja bem vindo ao meu site :D</p>
-    <p class="card-text">Por favor, faça login ou se cadastre:</p>
-    <div class="btn-group d-flex" role="group">
-      <%= link_to 'Entrar', '', class: 'btn btn-primary', method: 'get' %>
-      <%= link_to 'Criar conta', '', class: 'btn btn-secondary', method: 'get' %>
-    </div>
+    <% if user_signed_in? %>
+      <p class="card-text">Seja bem vindo ao meu site :D</p>
+      <p class="card-text">Por favor, faça login ou se cadastre:</p>
+      <div class="btn-group" role="group">
+        <%= link_to 'Upload de Imagens', '', :class => 'navbar-link' %>
+      </div>
+    <% else %>
+      <p class="card-text">Seja bem vindo ao meu site :D</p>
+      <p class="card-text">Por favor, faça login ou se cadastre:</p>
+      <div class="btn-group d-flex" role="group">
+        <%= button_tag 'Entrar', class: 'btn btn-primary', data: { toggle: 'modal', target: '#login_modal' } %>
+        <%= button_tag 'Criar conta', class: 'btn btn-secondary', data: { toggle: 'modal', target: '#sign_up_modal' } %>
+      </div>
+    <% end %>
   </div>
 </div>
+
+
+<%= render 'login_modal' %>
+<%= render 'sign_up_modal' %>
