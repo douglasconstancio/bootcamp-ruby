@@ -1,0 +1,12 @@
+<div>
+  <h1 class="text-center">Editar imagem</h1>
+
+  <%= render 'form', image: @image %>
+
+  <hr>
+
+  <div class="btn-group">
+    <%= link_to 'Detalhes', @image, class: 'btn btn-primary' %>
+    <%= link_to 'Voltar', images_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

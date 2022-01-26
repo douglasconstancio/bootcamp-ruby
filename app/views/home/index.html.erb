@@ -11,9 +11,9 @@
     <h5 class="card-title">Bem Vindo!</h5>
     <% if user_signed_in? %>
       <p class="card-text">Seja bem vindo ao meu site :D</p>
-      <p class="card-text">Por favor, faça login ou se cadastre:</p>
-      <div class="btn-group" role="group">
-        <%= link_to 'Upload de Imagens', '', :class => 'navbar-link' %>
+      <p class="card-text">Escolha uma das ações a serem feitas:</p>
+      <div class="btn-group d-flex" role="group">
+        <%= link_to 'Upload de Imagens', images_path, :class => 'btn btn-primary' %>
       </div>
     <% else %>
       <p class="card-text">Seja bem vindo ao meu site :D</p>
