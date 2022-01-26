@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'active_storage-postgresql'
 
+gem 'image_processing', '~> 1.2'
+
 gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb

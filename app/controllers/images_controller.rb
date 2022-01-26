@@ -2,7 +2,8 @@ class ImagesController < ApplicationController
   before_action :set_image, only: %i[show edit update destroy]
 
   def index
-    @images = Image.all
+    # @images = Image.all
+    @images = current_user.images
   end
 
   def show; end

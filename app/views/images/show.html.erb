@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="card mx-auto" style="width: 50%; min-width: 200px; margin-top: 1em">
+  <%= image_tag @image.file, class: 'card-img-top' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @image.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @image.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @image.title %>!</h5>
+    <div class="btn-group d-flex">
+      <%= link_to 'Editar', edit_image_path(@image), class: 'btn btn-warning' %>
+      <%= link_to 'Voltar', images_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
