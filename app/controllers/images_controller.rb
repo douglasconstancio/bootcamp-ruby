@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
+      ImageProcessWorker.perform_async(@image.id)
       redirect_to @image, notice: 'Imagem criada!'
     else
       render :new, status: :unprocessable_entity
@@ -26,6 +27,7 @@ class ImagesController < ApplicationController
 
   def update
     if @image.update(image_params)
+      ImageProcessWorker.perform_async(@image.id)
       redirect_to @image, notice: 'Imagem atualizada!'
     else
       render :edit, status: :unprocessable_entity

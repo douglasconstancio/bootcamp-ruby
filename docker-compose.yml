@@ -20,5 +20,20 @@ services:
       - postgres:/var/lib/postgresql/data
     env_file: .env
 
+  redis:
+    image: 'redis:6-alpine'
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - web
+      - database
+      - redis
+    volumes:
+      - .:/app
+    env_file: .env
+    entrypoint: ./entrypoints/sidekiq_entrypoint.sh
+
 volumes:
   postgres:

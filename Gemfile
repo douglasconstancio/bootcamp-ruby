@@ -24,12 +24,20 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'rmagick'
 
 gem 'active_storage-postgresql'
 
 gem 'image_processing', '~> 1.2'
 
 gem 'devise'
+
+gem 'sidekiq'
+
+
+gem 'redis'
+
+gem 'colorama'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

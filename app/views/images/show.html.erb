@@ -1,8 +1,10 @@
-<div class="card mx-auto" style="width: 50%; min-width: 200px; margin-top: 1em">
+<div class="card mx-auto" style="width: 50%; min-width: 200px; margin-top: 1em; background-color: <%= @image.background_color %>">
   <%= image_tag @image.file, class: 'card-img-top' %>
 
   <div class="card-body">
-    <h5 class="card-title"><%= @image.title %>!</h5>
+    <h2 class="card-title" style="color: <%= @image.detail_color %>"><%= @image.title %>!</h5>
+    <p class="card-text" style="color: <%= @image.primary_color %>">Primary color</p>
+    <p class="card-text" style="color: <%= @image.secondary_color %>">Secondary color</p>
     <div class="btn-group d-flex">
       <%= link_to 'Editar', edit_image_path(@image), class: 'btn btn-warning' %>
       <%= link_to 'Voltar', images_path, class: 'btn btn-secondary' %>
