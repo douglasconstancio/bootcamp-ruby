@@ -97,6 +97,15 @@
 
   // Inicie o banco de dados
   $ docker-compose exec web rails db:setup
+
+  // Caso queira executar todos os testes
+  $ docker-compose exec web rails db:setup
+
+  // Para rodar um arquivo de teste específico:
+  $ docker-compose exec web rspec spec/models/image_spec.rb
+
+  // Para rodar uma linha especifica de teste
+  $ docker-compose exec web rspec spec/models/image_spec.rb:3
 ```
 ---
 
