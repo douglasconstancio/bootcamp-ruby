@@ -73,7 +73,9 @@
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker-Hub](https://hub.docker.com/_/ruby)
 - [Ruby on Rails](https://guides.rubyonrails.org/)
-- [Sidekiq](https://github.com/mperham/sidekiq)
+- [Sidekiq](https://github.com/mperham/sidekiq)]
+- [BetterSpecs](https://www.betterspecs.org/)
+- [Relish](https://relishapp.com/rspec/rspec-rails/docs)
 
 ---
 
@@ -114,7 +116,7 @@
 - 🟢 Melhorias visuais como espaçamento e estado de alguns botões
 - ⛔️ Adicionar imagem no perfil
 - ⛔️ Adicionar mais campos no cadastro do usuário
-- ⛔️ Adicionar testes em geral
+- 🟢 Adicionar testes em geral
 
 ---
 
