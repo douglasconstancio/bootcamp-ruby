@@ -15,20 +15,16 @@ class ImagesController < ApplicationController
   def edit; end
 
   def create
-    @image = Image.new(image_params)
-
-    if @image.save
-      ImageProcessWorker.perform_async(@image.id)
-      redirect_to @image, notice: 'Imagem criada!'
+    if ImageService.create(image_params)
+      redirect_to action: 'index'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    if @image.update(image_params)
-      ImageProcessWorker.perform_async(@image.id)
-      redirect_to @image, notice: 'Imagem atualizada!'
+    if ImageService.update(image_params)
+      redirect_to action: 'index'
     else
       render :edit, status: :unprocessable_entity
     end
